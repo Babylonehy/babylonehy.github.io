@@ -1,4 +1,4 @@
 ## Welcome to Babylonehy's study pages
 
 # Anu study
-1. [Optimisation](anu\optimisation)
+1. [Optimisation](anu/optimisation/Minizinc.md)
