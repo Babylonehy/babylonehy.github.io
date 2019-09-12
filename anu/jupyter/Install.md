@@ -2,3 +2,20 @@
   激活conda环境： conda activate 环境名称
   首先安装ipykernel：conda install ipykernel
   python -m ipykernel install --name 环境名称
+# Remove Kernels
+jupyter kernelspec list
+jupyter kernelspec remove kernel_name
+https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+# Conda
+conda create -n dnn python=3.7
+# Theme
+jt -t oceans16 -N -T
+jt -t onedork -f roboto -fs 14 -nfs 14 -tfs 14 -ofs 11
+# Extra
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+pip install --upgrade jupyterthemes
+jt -l
+## disappear
+conda install -c conda-forge jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user --skip-running-check
