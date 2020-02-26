@@ -157,7 +157,13 @@ main {
 	}
 }
 .post-container {
-	padding-left: 40px;
+	padding-left: 40px;	
+	@media screen and (max-width: $mobileW + 1){
+			max-width: calc(100% - #{$leftWidth});
+			margin-left: $leftWidth;
+			height: auto;
+		}
+
 }
 .post {
 	font-family: 'Merriweather', sans-serif;
