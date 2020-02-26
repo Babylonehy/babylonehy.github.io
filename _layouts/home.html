@@ -6,7 +6,11 @@ layout: default
 <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%} -->
 
-{{ content }}
+<div class="post-container">
+    <div class="post">
+        {{ content }}
+    </div>
+</div>
 
 {%- if site.posts.size > 0 -%}
 <ul class="posts">
