@@ -1,5 +1,6 @@
 ---
 layout: post
+excerpt_separator: "<!--more-->"
 title:  "Acticate Funtion"
 date:   2020-02-26 11:57:40
 categories: Acticate Funtion, DNN
