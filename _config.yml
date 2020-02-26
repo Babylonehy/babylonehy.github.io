@@ -17,6 +17,11 @@ plainwhite:
   tagline: Student, Photographer
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
+  navigation:
+    - title: My Work
+      url: "/my-work"
+    - title: Resume
+      url: "/resume"
 
   # generate social links in footer
   social_links:
@@ -50,8 +55,10 @@ plainwhite:
 # - about.md
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: plainwhite
 
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
+
+
