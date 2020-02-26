@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Acticate Funtion"
+date:   2020-02-26 11:57:40
+categories: Acticate Funtion, DNN
+---
 [深度神经网络（DNN）损失函数和激活函数的选择](https://www.cnblogs.com/pinard/p/6437495.html)<br>
 [深度神经网络（DNN）反向传播算法(BP)](https://www.cnblogs.com/pinard/p/6422831.html)<br>
 [深度神经网络之损失函数和激活函数](https://zhuanlan.zhihu.com/p/38733907)<br>
