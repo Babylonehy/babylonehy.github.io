@@ -20,7 +20,7 @@ avatar: https://raw.githubusercontent.com/Babylonehy/babylonehy.github.io/master
 favicon: https://raw.githubusercontent.com/Babylonehy/babylonehy.github.io/master/images/favicon.png
 #  images/favicon.png
 
-
+repository: ShawnTeoh/matjek
 # 菜单中的按钮
 navigation:
   # - name: Home
@@ -28,7 +28,7 @@ navigation:
   - name: Resume
     url: https://babylonehy.github.io/resume/
   - name: Projects
-    url: https://babylonehy.github.io/projects/
+    url: /projects
   - name: Honeylodge
     url: https://babylonehy.github.io/Honeylodge/
   - name: Archive
