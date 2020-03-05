@@ -1,17 +1,19 @@
 ---
 layout: post
-title:  "Install Nvidia Driver For Ubuntu 16.04 on Sufacebook2"
-date:  2020-03-04 11:57:40
+title: "Install Nvidia Driver For Ubuntu 16.04 on Sufacebook2"
+date: 2020-03-04 11:57:40
 Author: Xiang Li
-tags: [Ubuntu16.04,Surface,Surface Kernel,DNN]
+tags: [Ubuntu16.04, Surface, Surface Kernel, DNN]
 comments: true
 toc: true
 ---
 
 # Prerequisites
+
 ```
 sudo apt install git curl wget sed
 ```
+
 ## Debian Repository
 
 The repository for Debian based distribution (including Ubuntu) can be found at https://pkg.surfacelinux.com/debian/.
@@ -41,37 +43,46 @@ https://wiki.debian.org/SourcesList#Editing_software_sources.
 
 **Install the required packages.**
 
-   For Debian:
-   ```
-   sudo apt-get install linux-headers-surface linux-image-surface linux-libc-dev-surface surface-ipts-firmware linux-surface-secureboot-mok libwacom-surface
-   ```
+For Debian:
+
+```
+sudo apt-get install linux-headers-surface linux-image-surface linux-libc-dev-surface surface-ipts-firmware linux-surface-secureboot-mok libwacom-surface
+```
 
 **Instructions**
+
 0. (Prep) Install Dependencies:
-  ```
-   sudo apt install git curl wget sed
-  ```
+
+```
+ sudo apt install git curl wget sed
+```
+
 1. Clone the linux-surface repo:
-  ```
-   git clone --depth 1 https://github.com/jakeday/linux-surface.git ~/linux-surface
-  ```
+
+```
+ git clone --depth 1 https://github.com/jakeday/linux-surface.git ~/linux-surface
+```
+
 2. Change directory to linux-surface repo:
-  ```
-   cd ~/linux-surface
-  ```
+
+```
+ cd ~/linux-surface
+```
+
 3. Run setup script:
-  ```
-   sudo sh setup.sh
-  ```
+
+```
+ sudo sh setup.sh
+```
+
 4. Reboot on installed kernel.
 
 The setup script will handle installing the latest kernel for you. You can also choose to download any version you want and install yourself:
 Install the headers, kernel and libc-dev (make sure you cd to your download location first):
 
-  ```
-  sudo dpkg -i linux-headers-[VERSION].deb linux-image-[VERSION].deb linux-libc-dev-[VERSION].deb
-  ```
-
+```
+sudo dpkg -i linux-headers-[VERSION].deb linux-image-[VERSION].deb linux-libc-dev-[VERSION].deb
+```
 
 ## Libwacom (patched)
 
@@ -81,7 +92,6 @@ To check if your device is identified correctly, you can run `libwacom-list-loca
 The patches can be found at https://github.com/linux-surface/libwacom-surface-patches, ready-to-install packages (`libwacom-surface`) in our [[package repositories|Package-Repositories]], or on the Arch user repository (AUR) for Arch Linux users.
 Debian packages will also be published at https://github.com/linux-surface/libwacom-surface-deb/releases.
 
-
 ## Surface Control Utility
 
 The [`surface`][surface-control] command line utility (`surface-control` package) aims to provide a unified command line interface to various aspects of Microsoft Surface devices.
@@ -90,7 +100,6 @@ It allows you to control the power state of the discrete GPU (dGPU), change the 
 Note that all these aspects can be manually triggered, e.g. via sysfs (see [[1][surface-acpi-perfmode],[2][surface-dgpu]]), and this utility only aims to provide a central, easy to use interface for it.
 
 For more information, please refer to the help functionality of this utility, e.g. by running `surface --help` or `surface <command> --help`.
-
 
 ## Surface DTX Daemon
 
@@ -104,63 +113,76 @@ The main daemon can be configured via the [`/etc/surface-dtx/surface-dtx-daemon.
 Please have a look at this file and the [default script](https://github.com/linux-surface/surface-dtx-daemon/blob/master/etc/dtx/detach.sh) run when detachment has been requested for more information on how to configure it.
 The per-user daemon takes care of notifications, i.e. it notifies you when the latch has been unlocked and the clipboard can be detached, or when the attachment process has completed and the device can be fully used again.
 
-
 [surface-control]: https://github.com/linux-surface/surface-control
 [surface-acpi-perfmode]: https://github.com/linux-surface/surface-aggregator-module#setting-the-performance-mode
 [surface-dgpu]: https://github.com/linux-surface/surface-aggregator-module#controlling-the-dgpu-power-state
 [surface-dtx-daemon]: https://github.com/linux-surface/surface-dtx-daemon
 [surface-fix-eraser]: https://github.com/linux-surface/surface-fix-eraser
+
 # NVIDIA
+
 [Download](https://www.nvidia.com/Download/index.aspx?lang=en-us)
 [Download Archive](https://www.nvidia.com/en-us/drivers/unix/)
 [Requirements](http://us.download.nvidia.com/XFree86/Linux-x86_64/384.69/README/minimumrequirements.html)
 
 https://askubuntu.com/questions/832524/possible-missing-frmware-lib-firmware-i915
+
 ```
 lshw -numeric -C display
 
 lspci | grep -i nvidia
 ```
+
 The above commands will output your NVIDIA model number.
 
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa && sudo apt-get update
-#search 
-sudo apt-cache search nvidia 
+#search
+sudo apt-cache search nvidia
 # or Recommand.
 ubuntu-drivers devices
 sudo apt install nvidia-390 nvidia-modprobe nvidia-settings nvidia-prime
 ```
+
 [Install NVIDIA Graphics Driver](https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#remove-previous-installations--important-)
 
 **Remove Previous Installations (Important)**
+
 ```
 sudo apt-get purge nvidia*
 
 # Note this might remove your cuda installation as well
-sudo apt-get autoremove 
+sudo apt-get autoremove
 ```
+
 As a summary, excuting `sudo apt-get install build-essential gcc-multilib dkms` to install all dependencies.
+
 ```
 blacklist nouveau
 options nouveau modeset=0
 ```
+
 ## modprobe: FATAL: Module nvidia-uvm not found.
-----This Part is very important Build if from source is better--
+
+----This Part is very important Build if from source is better---
+
 https://blog.csdn.net/yijuan_hw/article/details/53439408
 
-make sure load nvidia driver:```lspci | grep -i nvidia ```
+make sure load nvidia driver:`lspci | grep -i nvidia`
 
-```dkms status``` :bbswitch, 0.8: added  nvidia, 430.64: added
+`dkms status` :bbswitch, 0.8: added nvidia, 430.64: added
 
 ```
 dkms build -m nvdia -v 430.64
 /var/lib/dkms/nvidia/430.64/source
 ```
--------------------------------------------
+
+---
 
 # CUDA
+
 [cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+
 ```
 # 设置路径
 vi ~/.bashrc
@@ -174,7 +196,7 @@ source ~/.bashrc
 
 ```
 # 查看cuda版本，测试是否安装成功
-cat /usr/local/cuda/version.txt 
+cat /usr/local/cuda/version.txt
 nvcc -V
 
 # 编译 samples
@@ -184,30 +206,72 @@ cd /usr/local/cuda/samples/bin/x86_64/linux/release
 ./deviceQuery
 ```
 
-# Delte Kernel 
+# Delte Kernel
+
 Install synaptic
+
 ```
 sudo apt install synaptic
 ```
-Find all kernel by *linux-image,linux-header*
-update grub2 ```sudo update-grub2```
-List all kernels 
+
+Find all kernel by _linux-image,linux-header_
+update grub2 `sudo update-grub2`
+List all kernels
+
 ```
 dpkg --get-selections | grep linux
 sudo apt-get remove linux-image-
 ```
 
 # SSH Key
+
 ```
 ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
 ssh-keygen
 ```
 
+# [Terminator](https://github.com/EliverLara/terminator-themes)
+
+**1. Install the [requests](https://github.com/requests/requests) python package**
+
+```sh
+ pip install requests
+```
+> **Note:** If you're using python 3, ignore the previous command and install the `python2-requests` package for your specific OS.
+
+**2. Create plugins directory if it does not exist**
+
+```sh
+ mkdir -p $HOME/.config/terminator/plugins
+```
+
+**3. Getting the correct plugin**
+
+For terminator >= 1.9
+
+```sh
+ wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py"
+```
+
+For terminator < 1.9
+
+```sh
+ wget https://git.io/v5Zwz -O $HOME"/.config/terminator/plugins/terminator-themes.py"
+```
+
+**4. Activation**
+
+Check the `TerminatorThemes` option under `terminator > preferences > plugins`.
+
+
 # Reference
+
 - [ubuntu 16.04](https://turlucode.com/how-to-install-ubuntu-16-04-on-surface-book-2/)
 - [ubuntu 18.04](https://turlucode.com/how-to-install-ubuntu-18-04-on-surface-book-2/)
 - [jakeday linux-surface](https://github.com/jakeday/linux-surface)
 - [Linux-Surface Kernel](https://github.com/linux-surface)
 - [Utilities and Packages](https://github.com/linux-surface/linux-surface/wiki/Utilities-and-Packages)
 - [Linux Surface Kernel Installation](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup)
+- [Terminator](https://github.com/EliverLara/terminator-themes)
+
