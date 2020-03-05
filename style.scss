@@ -320,17 +320,22 @@ img {
 //
 
 .wrapper-sidebar {
-  width: 15%;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-color: $background-color;
-	height: 100%;
-	top: 0;
-	left:0;
-	position: fixed;
-	z-index: 4;
-  border-right: 1px solid $divider-color;
-
+  // width: 15%; //30-15%
+	// -webkit-background-size: cover;
+	// background-size: cover;
+	// background-color: $background-color;
+	// height: 100%;
+	// top: 0;
+	// left:0;
+	// position: fixed;
+	// z-index: 4;
+  // border-right: 1px solid $divider-color;
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+    position: relative;
+    border-bottom: 1px solid $divider-color;
+    border-right: 0;
   @include mobile {
     width: 100%;
     height: auto;
