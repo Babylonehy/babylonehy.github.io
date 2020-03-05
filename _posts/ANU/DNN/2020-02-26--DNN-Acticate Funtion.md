@@ -5,7 +5,7 @@ date:  2020-02-26 11:57:40
 Author: Xiang Li
 tags: [Acticate Funtion, DNN]
 comments: true
-# toc: true
+toc: true
 ---
 
 [深度神经网络（DNN）损失函数和激活函数的选择](https://www.cnblogs.com/pinard/p/6437495.html)<br>

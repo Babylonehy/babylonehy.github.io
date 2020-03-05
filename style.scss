@@ -28,7 +28,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1000px;
-  padding: 0 20px;
+  padding: 0 auto;
   width: 100%;
 }
 
@@ -320,22 +320,17 @@ img {
 //
 
 .wrapper-sidebar {
-  // width: 15%; //30-15%
-	// -webkit-background-size: cover;
-	// background-size: cover;
-	// background-color: $background-color;
-	// height: 100%;
-	// top: 0;
-	// left:0;
-	// position: fixed;
-	// z-index: 4;
-  // border-right: 1px solid $divider-color;
-    width: 100%;
-    height: auto;
-    padding-bottom: 24px;
-    position: relative;
-    border-bottom: 1px solid $divider-color;
-    border-right: 0;
+  width: 25%; //30-15%
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-color: $background-color;
+	height: 100%;
+	top: 0;
+	left:0;
+	position: fixed;
+	z-index: 4;
+  border-right: 1px solid $divider-color;
+
   @include mobile {
     width: 100%;
     height: auto;
@@ -367,8 +362,8 @@ img {
   .site-avatar {
     margin:0 auto;
     display: block;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 100px;
 
     @include mobile {
       max-width: 120px;
@@ -388,12 +383,12 @@ img {
   cursor: pointer;
   font-family: $base-font;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 
 .site-description {
-  margin: 15px auto;
+  margin: 15px 2px;
   color: $base-lighten-color;
   font-size: 16px;
 
@@ -411,8 +406,8 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $base-font;
   font-weight: 500;
-  font-size: 18px;
-
+  font-size: 15px;
+  
   @include mobile {
     margin-top: 9px;
     font-size: 16px;
@@ -435,7 +430,7 @@ nav {
 
 .wrapper-content {
   float: right;
-  width: 85%; //70->85
+  width: 75%; //70->85
 
   @include mobile {
     float: none;
@@ -450,7 +445,8 @@ nav {
   .tag {
     display: inline;
     font-weight: 300;
-    font-size: $small-font-size;
+    // font-size: $small-font-size;
+    font-size: 15px;
 
     li:before {
       content: '';
@@ -538,15 +534,15 @@ nav {
 .toc {
   width: 240px;
   height: 100%;
-  left: 30%;
+  left: 25%;
   position: fixed;
   z-index: 4;
-  padding: 60px 20px 0 20px;
+  padding: 60px 5px 0 5px;
   
   &:before{
     content:"Contents";
     margin: 0 0 1em 1em;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.2em;
     display: block;
     padding-bottom: 0.6em;

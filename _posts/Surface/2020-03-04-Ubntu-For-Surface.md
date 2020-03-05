@@ -264,6 +264,33 @@ For terminator < 1.9
 
 Check the `TerminatorThemes` option under `terminator > preferences > plugins`.
 
+# Jekyll
+
+1.安装ruby
+
+```
+$ sudo apt-add-repository ppa:brightbox/ruby-ng
+$ sudo apt-get update
+```
+`sudo apt install ruby-full ruby-bundler`
+
+2.安装jekyll
+
+```
+sudo gem install jekyll
+sudo apt-get install ruby2.6 ruby2.6-dev
+```
+3.检测jekyll是否安装成功
+
+```
+
+jekyll -v
+gem install jekyll-sitemap
+gem install jekyll-feed
+gem install jekyll-paginate
+
+jekyll serve
+```
 
 # Reference
 

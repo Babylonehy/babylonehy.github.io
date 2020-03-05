@@ -13,9 +13,9 @@
     <nav>
       {% for nav in site.navigation %}
       {% if nav.url contains 'http://' or nav.url contains 'https://' %}
-      <a href="{{ nav.url }}">{{ nav.name }}</a>
+      <li><a href="{{ nav.url }}">{{ nav.name }}</a></li>
       {% else %}
-      <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.name }}</a>
+      <li><a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.name }}</a></li>
       {% endif %}
       {% endfor %}
     </nav>
