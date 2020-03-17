@@ -293,6 +293,30 @@ gem install jekyll-paginate
 
 jekyll serve
 ```
+# Fcitx
+sudo apt install fcitx 
+2，fcitx不自启，这该怎么办呀？
+
+GUI界面：
+
+system settings > startup and shutdown > auto-start> add program
+
+
+3，fcitx无法在所用应用中使用或是启动后没办法使用
+
+fcitx-diagnose
+终端中输入上面的代码，你只需要注意红字部分就可以了，会自动给出解决方案的。
+
+一般来说都是fcitx桌面文件未配置好，这种情况尤其容易出现在最新的Gnome和Kde上，因为二者已经迁移到了wayland，而fcitx的配置文件还停留在以前的xorg上。
+
+通过代码，列出问题，如果是让你编辑.xprofile文件，请直接忽略，你可以直接复制代码了。
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+将上述代码粘贴进/etc/enviroment中即可，别忘了用sudo，etc是根目录下的文件夹哦！
+
+至此，你的fcitx应该就是配置完成了，注销一下就可以用了。
 
 # Reference
 
