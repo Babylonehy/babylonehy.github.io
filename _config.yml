@@ -37,6 +37,8 @@ navigation:
     url: /tags
   - name: About
     url: /about
+  - name: Openwrt Firmware
+    url: https://github.com/Babylonehy/openwrt-firmware
 
 # 每页的文章数
 paginate: 5
@@ -87,8 +89,9 @@ url:
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
 baseurl: 
-
+# 未来时间
 future: true
+
 #
 # !! 以下所有设置都不需要更改 !!
 #
