@@ -181,7 +181,7 @@ dkms build -m nvdia -v 430.64
 
 ---
 
-# CUDA
+## CUDA
 
 [cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 
@@ -208,7 +208,7 @@ cd /usr/local/cuda/samples/bin/x86_64/linux/release
 ./deviceQuery
 ```
 
-# Delte Kernel
+## Delte Kernel
 
 Install synaptic
 
@@ -225,12 +225,29 @@ dpkg --get-selections | grep linux
 sudo apt-get remove linux-image-
 ```
 
-# SSH Key
+## SSH Key
 
 ```
 ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
 ssh-keygen
+```
+
+create confing 
+
+```
+cd ~/.ssh/
+touch config
+```
+
+add following to config.
+
+```
+# github
+  Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_github_linux
 ```
 
 # [Terminator](https://github.com/EliverLara/terminator-themes)
