@@ -88,7 +88,7 @@ url:
 # 那么就写成 "/repository-name"
 baseurl: 
 
-
+future: true
 #
 # !! 以下所有设置都不需要更改 !!
 #
@@ -116,7 +116,7 @@ sass:
 # Use the following plug-ins
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+# - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
 
 # Exclude these files from your production _site
@@ -126,4 +126,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+gems:
+  - jekyll-sitemap
 
