@@ -335,6 +335,15 @@ XMODIFIERS=@im=fcitx
 
 至此，你的fcitx应该就是配置完成了，注销一下就可以用了。
 
+# Boot with gpu on
+
+To your actual question: The default power-state is controlled via module parameters. There's some info about this on the SAM repo: https://github.com/linux-surface/surface-aggregator-module#controlling-the-dgpu-power-state. In essence:
+
+Create a new .conf file in /etc/modprobe.d/, e.g. /etc/modprobe.d/dgpu.conf
+In the file, add the line options surface_sam_hps dgpu_power_init=1 (if you use the SAM module via the kernel, or options surface_sam dgpu_power_init=1 if you've manually installed the SAM module from the repo).
+Reboot.
+Of course you could also write a systemd service to just run surface dgpu set on (or any kind of script that checks that based on some condition) before the graphical target if you want to have more control.
+
 # Reference
 
 - [ubuntu 16.04](https://turlucode.com/how-to-install-ubuntu-16-04-on-surface-book-2/)
