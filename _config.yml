@@ -27,9 +27,8 @@ navigation:
   #   url: /
   - name: Resume
     url: https://babylonehy.github.io/resume/
-  - name: Projects
-    - name: FaceX
-        url: /FaceX
+  - page: Projects
+    url: /Projects
   - name: Honeylodge
     url: https://babylonehy.github.io/Honeylodge/
   - name: Archive

@@ -293,6 +293,8 @@ $ sudo apt-get update
 ```
 `sudo apt install ruby-full ruby-bundler`
 
+https://blog.walterlv.com/post/setup-jekyll-in-windows.html
+
 2.安装jekyll
 
 ```

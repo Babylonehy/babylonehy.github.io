@@ -398,7 +398,8 @@ img {
 }
 
 .navlist{
-  text-align:center;
+  text-align:justify;
+  margin: 80px;
 }
 
 nav {
@@ -406,7 +407,7 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $base-font;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   
   @include mobile {
     margin-top: 9px;
