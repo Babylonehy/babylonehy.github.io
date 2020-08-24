@@ -27,7 +27,7 @@ navigation:
   #   url: /
   - name: Resume
     url: https://babylonehy.github.io/resume/
-  - page: Projects
+  - name: Projects
     url: /Projects/
   - name: Honeylodge
     url: https://babylonehy.github.io/Honeylodge/
