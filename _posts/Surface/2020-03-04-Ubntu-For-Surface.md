@@ -284,7 +284,6 @@ For terminator < 1.9
 Check the `TerminatorThemes` option under `terminator > preferences > plugins`.
 
 # Jekyll
-
 1.安装ruby
 
 ```
