@@ -15,4 +15,7 @@ https://code.meideng.net/16011324174151516
 
 - https://www.youtube.com/watch?v=fk0eIRbd4e0
 - https://www.youtube.com/watch?v=XK26I9eoSl8
-- [**simple online**](http://simplex.tode.cz/en/)
+- [**simple online**]
+  - (http://simplex.tode.cz/en/)
+  - https://www.mathstools.com/dev.php/section/main/simplex_online_calculator#
+  - [推荐用这个](https://linprog.com/) 
