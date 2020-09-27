@@ -10,3 +10,9 @@ https://code.meideng.net/16011324174151516
 - [eigenface的直观解释**](https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/)
 - [PCA的交互理解*](https://setosa.io/ev/principal-component-analysis/)
 - [eigenface的算法步骤*****](https://www.geeksforgeeks.org/ml-face-recognition-using-eigenfaces-pca-algorithm/)
+
+## Simplex
+
+- https://www.youtube.com/watch?v=fk0eIRbd4e0
+- https://www.youtube.com/watch?v=XK26I9eoSl8
+- [**simple online**](http://simplex.tode.cz/en/)
